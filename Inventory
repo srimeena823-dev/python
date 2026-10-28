@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+public class InventoryManagement {
+    public static void main(String[] args) {
+        ArrayList<String> products = new ArrayList<>();
+
+        products.add("Laptop");
+        products.add("Smartphone");
+        products.add("Tablet");
+        products.add("Smartwatch");
+
+        System.out.println("Initial Inventory Size: " + products.size());
+        
+        System.out.println("Items in Stock:");
+        for (String item : products) {
+            System.out.println("- " + item);
+        }
+
+        System.out.println("\nChecking availability of 'Tablet': " + products.contains("Tablet"));
+
+        products.remove("Tablet");
+        System.out.println("Updated Inventory after removing Tablet:");
+        
+        for (int i = 0; i < products.size(); i++) {
+            System.out.println((i + 1) + ". " + products.get(i));
+        }
+
+        products.clear();
+        System.out.println("\nIs inventory empty? " + products.isEmpty());
+    }
+}
