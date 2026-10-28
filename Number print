@@ -1,0 +1,25 @@
+class NumberPrinter extends Thread {
+    public void run() {
+        for (int i = 1; i <= 3; i++) {
+            System.out.println(Thread.currentThread().getName() + " printing: " + i);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                System.out.println("Thread interrupted");
+            }
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        NumberPrinter thread1 = new NumberPrinter();
+        NumberPrinter thread2 = new NumberPrinter();
+
+        thread1.setName("Thread-A");
+        thread2.setName("Thread-B");
+
+        thread1.start();
+        thread2.start();
+    }
+}
