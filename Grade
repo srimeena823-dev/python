@@ -1,0 +1,34 @@
+class Student {
+    private String name;
+    private int id;
+    private double grade;
+
+    public Student(String name, int id, double grade) {
+        this.name = name;
+        this.id = id;
+        this.grade = grade;
+    }
+
+    public void displayDetails() {
+        System.out.println("ID: " + id + " | Name: " + name + " | Grade: " + grade);
+    }
+
+    public boolean hasPassed() {
+        return grade >= 50.0;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student1 = new Student("Alice", 101, 85.5);
+        Student student2 = new Student("Bob", 102, 42.0);
+
+        student1.displayDetails();
+        System.out.println("Passed: " + student1.hasPassed());
+
+        System.out.println();
+
+        student2.displayDetails();
+        System.out.println("Passed: " + student2.hasPassed());
+    }
+}
